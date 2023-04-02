@@ -1,0 +1,85 @@
+{
+  "name": "woe-manager",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/woe-manager/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/woe-manager",
+        "index": "apps/woe-manager/src/index.html",
+        "baseHref": "/",
+        "main": "apps/woe-manager/src/main.tsx",
+        "polyfills": "apps/woe-manager/src/polyfills.ts",
+        "tsConfig": "apps/woe-manager/tsconfig.app.json",
+        "assets": [
+          "apps/woe-manager/src/favicon.ico",
+          "apps/woe-manager/src/assets"
+        ],
+        "styles": ["apps/woe-manager/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack",
+        "postcssConfig": "apps/woe-manager/postcss.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/woe-manager/src/environments/environment.ts",
+              "with": "apps/woe-manager/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "woe-manager:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "woe-manager:build:development"
+        },
+        "production": {
+          "buildTarget": "woe-manager:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/woe-manager/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/woe-manager/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
