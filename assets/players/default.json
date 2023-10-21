@@ -1,0 +1,74 @@
+[
+  {
+    "teamName": "Team 1",
+    "raid": "Raid 1",
+    "players": [
+      {
+        "nickname": "MedSestra",
+        "job": "saint",
+        "order": 1
+      },
+      {
+        "nickname": "Charmander",
+        "job": "arcane-master",
+        "order": 2
+      },
+      {
+        "nickname": "MustDie",
+        "job": "chronomancer",
+        "order": 3
+      },
+      {
+        "nickname": "Крысавчик",
+        "job": "tyrant",
+        "order": 4
+      },
+      {
+        "nickname": "TheVoid",
+        "job": "rathgricy",
+        "order": 5
+      },
+      {
+        "nickname": "TuTanHamon",
+        "job": "divine-avenger",
+        "order": 6
+      }
+    ]
+  },
+  {
+    "teamName": "Team 2",
+    "raid": "Raid 1",
+    "players": [
+      {
+        "nickname": "JuggerON",
+        "job": "novice-guardian",
+        "order": 1
+      },
+      {
+        "nickname": "Биотрикс",
+        "job": "saint",
+        "order": 2
+      },
+      {
+        "nickname": "BOF",
+        "job": "novice-guardian",
+        "order": 3
+      },
+      {
+        "nickname": "NoDrama",
+        "job": "spirit-whisperer",
+        "order": 4
+      },
+      {
+        "nickname": "MoveYourBody",
+        "job": "thanatos",
+        "order": 5
+      },
+      {
+        "nickname": "|ife",
+        "job": "thanatos",
+        "order": 6
+      }
+    ]
+  }
+]
